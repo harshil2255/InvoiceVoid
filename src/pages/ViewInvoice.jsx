@@ -75,10 +75,10 @@ export default function ViewInvoice() {
       emailText += `Please find the details of your invoice attached or let me know if you need a PDF copy.\n\nThank you for your business!`;
       const body = encodeURIComponent(emailText);
       
-      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${invoice.client_email}&su=${subject}&body=${body}`;
+      const mailtoLink = `mailto:${invoice.client_email}?subject=${subject}&body=${body}`;
 
-      // 2. Open Gmail in a new tab immediately to prevent popup blockers
-      window.open(gmailLink, '_blank');
+      // 2. Open default email app immediately (never gets blocked by popup blockers)
+      window.location.href = mailtoLink;
 
       // 3. Generate and download the PDF automatically
       const element = document.getElementById('invoice-document');
