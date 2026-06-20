@@ -177,7 +177,7 @@ export default function ViewInvoice() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '4rem' }}>
+          <div className="grid-2-col" style={{ gap: '2rem', marginBottom: '4rem' }}>
             <div>
               <p style={{ fontSize: '0.875rem', color: '#475569', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem', fontWeight: 700 }}>Billed To</p>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: '#0f172a', margin: 0 }}>{invoice.client_name}</h3>
@@ -195,8 +195,8 @@ export default function ViewInvoice() {
             </div>
           </div>
 
-          <div style={{ marginBottom: '4rem' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <div className="table-responsive" style={{ marginBottom: '4rem' }}>
+            <table style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid #cbd5e1' }}>
                   <th style={{ padding: '1rem 0', color: '#334155', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase' }}>Description</th>
@@ -218,8 +218,8 @@ export default function ViewInvoice() {
             </table>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '2rem' }}>
-            <div style={{ flex: 1, paddingRight: '2rem' }}>
+          <div className="flex mobile-flex-col" style={{ justifyContent: 'space-between', alignItems: 'flex-start', marginTop: '2rem', gap: '2rem' }}>
+            <div style={{ flex: 1 }}>
               {invoice.notes && (
                 <div>
                   <h4 style={{ fontSize: '0.875rem', color: '#475569', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem', fontWeight: 700 }}>Notes</h4>
@@ -228,7 +228,7 @@ export default function ViewInvoice() {
               )}
             </div>
             
-            <div style={{ width: '300px', flexShrink: 0 }}>
+            <div className="mobile-full-width" style={{ width: '300px', flexShrink: 0 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '1rem', borderBottom: '2px solid #cbd5e1', marginBottom: '1rem' }}>
                 <span style={{ color: '#334155', fontWeight: 700 }}>Subtotal</span>
                 <span style={{ color: '#0f172a', fontWeight: 600 }}>₹{parseFloat(invoice.total).toFixed(2)}</span>

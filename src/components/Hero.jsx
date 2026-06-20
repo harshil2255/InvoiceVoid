@@ -27,7 +27,7 @@ export default function Hero() {
     <>
       <section className="section-padding" style={{ paddingTop: '8rem', paddingBottom: '8rem', position: 'relative' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 350px), 1fr))", gap: "4rem", alignItems: 'center' }}>
             
             {/* Left Column */}
             <motion.div variants={containerVariants} initial="hidden" animate="visible">

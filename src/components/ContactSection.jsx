@@ -118,7 +118,7 @@ export default function ContactSection({ isOpen, onClose }) {
                   style={{ flex: '1 1 400px' }}
                 >
                   <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1.5rem' }}>
                       <motion.div variants={itemVariants} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                         <label style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-primary)' }}>Name</label>
                         <input type="text" placeholder="Your name" style={inputStyle} />

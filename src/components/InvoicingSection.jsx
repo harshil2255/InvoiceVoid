@@ -32,7 +32,7 @@ export default function InvoicingSection() {
   return (
     <section id="features" className="section-padding" style={{ borderTop: '1px solid var(--border-color)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           {/* Text Content */}
           <motion.div 

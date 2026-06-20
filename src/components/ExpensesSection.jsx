@@ -32,7 +32,7 @@ export default function ExpensesSection() {
   return (
     <section className="section-padding" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           {/* Text Content */}
           <motion.div 
@@ -96,7 +96,7 @@ export default function ExpensesSection() {
               </div>
 
               {/* Summary Card */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 350px), 1fr))", gap: "0.5rem", marginBottom: '1.5rem' }}>
                 <div style={{ backgroundColor: '#171717', padding: '1rem', borderRadius: '1rem', position: 'relative' }}>
                   <p style={{ color: 'white', fontWeight: 700 }}>₹1,77,154.06</p>
                   <p style={{ color: '#a3a3a3', fontSize: '0.7rem' }}>This Month</p>

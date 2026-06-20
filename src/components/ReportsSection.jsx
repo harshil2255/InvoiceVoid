@@ -32,7 +32,7 @@ export default function ReportsSection() {
   return (
     <section className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           {/* CSS Phone Mockup (Left Side) */}
           <motion.div 
@@ -107,7 +107,7 @@ export default function ReportsSection() {
                 </div>
 
                 {/* 2 Mini Cards */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 350px), 1fr))", gap: "0.5rem", marginBottom: '1.5rem' }}>
                   <div style={{ backgroundColor: '#171717', padding: '0.75rem', borderRadius: '0.75rem' }}>
                     <p style={{ color: 'white', fontSize: '0.7rem', fontWeight: 600, marginBottom: '0.25rem' }}>Active Months</p>
                     <p style={{ color: 'white', fontSize: '1rem', fontWeight: 700, marginBottom: '0.5rem' }}>1/12</p>

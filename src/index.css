@@ -294,3 +294,65 @@ body {
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
 .flex-col { flex-direction: column; }
+
+/* Responsive Overrides */
+
+/* Responsive Grid Utilities */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Table Responsive Wrapper */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 900px) {
+  .grid-2-col {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile Typography Adjustments */
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: 2.5rem;
+  }
+  .heading-2 {
+    font-size: 2rem;
+  }
+  .section-padding {
+    padding: 4rem 0;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+  
+  /* Utilities overrides for mobile */
+  .mobile-flex-col {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  .mobile-gap-4 {
+    gap: 1rem !important;
+  }
+}
+
+/* Disable Custom Cursor on Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+}

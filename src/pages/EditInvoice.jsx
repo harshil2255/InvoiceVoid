@@ -222,7 +222,7 @@ export default function EditInvoice() {
           <div className="card" style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', marginBottom: '2rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>Client Details</h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Client Name *</label>
                 <input type="text" name="clientName" required value={formData.clientName} onChange={handleInputChange} style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)', outline: 'none' }} placeholder="Acme Corp" />
@@ -233,7 +233,7 @@ export default function EditInvoice() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.5rem' }}>
               <div>
                 <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Invoice Date *</label>
                 <input type="date" name="date" required value={formData.date} onChange={handleInputChange} style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)', outline: 'none' }} />
@@ -261,7 +261,8 @@ export default function EditInvoice() {
           <div className="card" style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', marginBottom: '2rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>Line Items</h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr 1fr 1fr 40px', gap: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: 500, padding: '0 0.5rem' }}>
+          <div className="table-responsive">
+            <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr 1fr 1fr 40px', minWidth: '600px', gap: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: 500, padding: '0 0.5rem' }}>
               <div>Description</div>
               <div>Qty</div>
               <div>Price (₹)</div>
@@ -318,6 +319,8 @@ export default function EditInvoice() {
             >
               <Plus size={16} /> Add Item
             </button>
+            
+            </div>
             
             <div style={{ marginTop: '2rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'flex-end' }}>
               <div style={{ width: '300px' }}>

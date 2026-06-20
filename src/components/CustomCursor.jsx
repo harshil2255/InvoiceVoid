@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   // useMotionValue avoids triggering React re-renders on every mouse pixel movement
   const cursorX = useMotionValue(-100);
@@ -14,6 +15,11 @@ export default function CustomCursor() {
   const springY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      setIsTouchDevice(true);
+      return;
+    }
+
     const updateMousePosition = (e) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -36,6 +42,8 @@ export default function CustomCursor() {
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, [cursorX, cursorY]);
+
+  if (isTouchDevice) return null;
 
   return (
     <motion.div

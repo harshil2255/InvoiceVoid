@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 export default function Header({ isDarkMode, toggleTheme }) {
   const navigate = useNavigate();
   const [session, setSession] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!supabase) return;
@@ -44,36 +45,96 @@ export default function Header({ isDarkMode, toggleTheme }) {
           <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>InvoiceVoid</span>
         </Link>
         
-        <nav className="nav-links" style={{ display: 'flex', gap: '2rem' }}>
-          <a href="/#features" className="nav-link" style={{ fontSize: '0.875rem' }}>Features</a>
-          <a href="/blog" className="nav-link" style={{ fontSize: '0.875rem' }}>Blog</a>
-          <a href="/#faq" className="nav-link" style={{ fontSize: '0.875rem' }}>FAQ</a>
-          <a href="/about" className="nav-link" style={{ fontSize: '0.875rem' }}>About</a>
-          <Link to="/contact" className="nav-link" style={{ fontSize: '0.875rem' }}>Contact</Link>
-        </nav>
-        
-        <div className="flex items-center gap-4">
+        <div className="mobile-menu-btn">
           <button 
-            onClick={toggleTheme} 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
             className="btn btn-ghost"
-            aria-label="Toggle Dark Mode"
+            aria-label="Toggle Mobile Menu"
             style={{ padding: '0.5rem', borderRadius: '50%' }}
           >
-            {isDarkMode ? <Sun size={20} color="var(--text-primary)" /> : <Moon size={20} color="var(--text-primary)" />}
+            {isMobileMenuOpen ? <X size={24} color="var(--text-primary)" /> : <Menu size={24} color="var(--text-primary)" />}
           </button>
+        </div>
+
+        <div className={`nav-container ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <nav className="nav-links">
+            <a href="/#features" className="nav-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.875rem' }}>Features</a>
+            <a href="/blog" className="nav-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.875rem' }}>Blog</a>
+            <a href="/#faq" className="nav-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.875rem' }}>FAQ</a>
+            <a href="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.875rem' }}>About</a>
+            <Link to="/contact" className="nav-link" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '0.875rem' }}>Contact</Link>
+          </nav>
           
-          <motion.button 
-            onClick={() => navigate(session ? '/dashboard' : '/signup')}
-            className="btn btn-primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            style={{ padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}
-          >
-            {session ? 'Dashboard' : 'Get Started'}
-          </motion.button>
+          <div className="nav-actions flex items-center gap-4">
+            <button 
+              onClick={toggleTheme} 
+              className="btn btn-ghost"
+              aria-label="Toggle Dark Mode"
+              style={{ padding: '0.5rem', borderRadius: '50%' }}
+            >
+              {isDarkMode ? <Sun size={20} color="var(--text-primary)" /> : <Moon size={20} color="var(--text-primary)" />}
+            </button>
+            
+            <motion.button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                navigate(session ? '/dashboard' : '/signup');
+              }}
+              className="btn btn-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              style={{ padding: '0.5rem 1.25rem', fontSize: '0.875rem', width: '100%' }}
+            >
+              {session ? 'Dashboard' : 'Get Started'}
+            </motion.button>
+          </div>
         </div>
       </div>
+      
+      <style>{`
+        .nav-container {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+        .mobile-menu-btn {
+          display: none;
+        }
+        @media (max-width: 768px) {
+          .nav-container {
+            display: none;
+            position: absolute;
+            top: 4.5rem;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg-primary);
+            flex-direction: column;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
+          }
+          .nav-container.mobile-open {
+            display: flex;
+          }
+          .nav-links {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-start;
+            width: 100%;
+          }
+          .nav-actions {
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+          }
+          .mobile-menu-btn {
+            display: block;
+          }
+        }
+      `}</style>
     </header>
   );
 }

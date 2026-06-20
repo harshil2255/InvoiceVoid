@@ -14,6 +14,8 @@ import ViewInvoice from './pages/ViewInvoice';
 import EditInvoice from './pages/EditInvoice';
 import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
+import About from './pages/About';
+import Blog from './pages/Blog';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -88,6 +90,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

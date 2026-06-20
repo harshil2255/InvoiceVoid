@@ -32,7 +32,7 @@ export default function EstimatesSection() {
   return (
     <section className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           {/* CSS Phone Mockup - Left Side */}
           <motion.div 
