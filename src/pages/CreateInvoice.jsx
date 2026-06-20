@@ -131,7 +131,7 @@ export default function CreateInvoice() {
         )}
 
         <form onSubmit={handleSave}>
-          <div className="card" style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', marginBottom: '2rem' }}>
+          <div className="card invoice-paper" style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', marginBottom: '2rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>Client Details</h3>
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.5rem', marginBottom: '1.5rem' }}>
@@ -170,7 +170,7 @@ export default function CreateInvoice() {
             </div>
           </div>
 
-          <div className="card" style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', marginBottom: '2rem' }}>
+          <div className="card invoice-paper" style={{ padding: '2rem', backgroundColor: 'var(--bg-primary)', marginBottom: '2rem' }}>
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>Line Items</h3>
             
             <div className="table-responsive">

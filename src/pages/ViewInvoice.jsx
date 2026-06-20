@@ -164,7 +164,7 @@ export default function ViewInvoice() {
         )}
 
         {/* Invoice Paper Document */}
-        <div id="invoice-document" className="card" style={{ padding: '4rem', backgroundColor: 'white', color: 'black', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
+        <div id="invoice-document" className="card invoice-paper" >
           
           <div className="flex flex-wrap" style={{ justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4rem', gap: '2rem' }}>
             <div>

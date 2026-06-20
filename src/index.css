@@ -298,6 +298,7 @@ body {
 .mt-12 { margin-top: 3rem; }
 .gap-4 { gap: 1rem; }
 .flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
@@ -413,5 +414,17 @@ body {
 @media (min-width: 769px) {
   .footer-brand {
     grid-column: span 2;
+  }
+}
+
+.invoice-paper {
+  padding: 4rem;
+  background-color: white;
+  color: black;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .invoice-paper {
+    padding: 1.5rem;
   }
 }
