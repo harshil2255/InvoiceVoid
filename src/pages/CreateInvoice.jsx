@@ -235,7 +235,7 @@ export default function CreateInvoice() {
             </div>
             
             <div style={{ marginTop: '2rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'flex-end' }}>
-              <div style={{ width: '300px' }}>
+              <div style={{ width: '100%', maxWidth: '300px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)' }}>Total:</span>
                   <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-blue)' }}>₹{calculateTotal().toFixed(2)}</span>

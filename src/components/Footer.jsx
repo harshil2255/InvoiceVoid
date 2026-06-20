@@ -5,8 +5,7 @@ export default function Footer() {
     <footer style={{ backgroundColor: 'var(--bg-primary)', borderTop: '1px solid var(--border-color)', paddingTop: '4rem', paddingBottom: '2rem' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '3rem', marginBottom: '4rem' }}>
-          
-          <div style={{ gridColumn: 'span 2' }}>
+          <div className="footer-brand">
             <div className="logo flex items-center gap-2 mb-4">
               <div style={{ 
                 width: '38px', height: '38px', 

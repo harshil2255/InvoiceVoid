@@ -158,6 +158,7 @@ body {
 /* Common Layouts */
 .container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -239,6 +240,7 @@ body {
   padding: 2rem;
   box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .card:hover {
@@ -401,5 +403,12 @@ body {
   }
   .mobile-menu-btn {
     display: block;
+  }
+}
+
+/* Footer Specific Styles */
+@media (min-width: 769px) {
+  .footer-brand {
+    grid-column: span 2;
   }
 }

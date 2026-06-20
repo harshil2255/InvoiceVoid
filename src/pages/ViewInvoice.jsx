@@ -228,7 +228,7 @@ export default function ViewInvoice() {
               )}
             </div>
             
-            <div className="mobile-full-width" style={{ width: '300px', flexShrink: 0 }}>
+            <div className="mobile-full-width" style={{ width: '100%', maxWidth: '300px', flexShrink: 0 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '1rem', borderBottom: '2px solid #cbd5e1', marginBottom: '1rem' }}>
                 <span style={{ color: '#334155', fontWeight: 700 }}>Subtotal</span>
                 <span style={{ color: '#0f172a', fontWeight: 600 }}>₹{parseFloat(invoice.total).toFixed(2)}</span>
