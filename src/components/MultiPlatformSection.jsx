@@ -126,7 +126,7 @@ export default function MultiPlatformSection() {
           }}
         >
           {/* Phone (Left) */}
-          <motion.div variants={itemVariants} style={{ zIndex: 10, width: '300px', height: '500px', flexShrink: 0 }}>
+          <motion.div variants={itemVariants} style={{ zIndex: 10, width: '100%', maxWidth: '300px', height: '500px', flexShrink: 0 }}>
             <div style={{ width: '100%', height: '100%', backgroundColor: '#0f172a', borderRadius: '2.5rem', padding: '1.25rem', border: '8px solid #1e293b', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '40%', height: '20px', backgroundColor: '#1e293b', borderBottomLeftRadius: '1rem', borderBottomRightRadius: '1rem' }}></div>
               <div style={{ paddingTop: '1.5rem', height: '100%' }}>
@@ -136,14 +136,14 @@ export default function MultiPlatformSection() {
           </motion.div>
 
           {/* Desktop/Web (Center) */}
-          <motion.div variants={itemVariants} style={{ zIndex: 5, width: '600px', height: '600px', flexShrink: 0 }}>
+          <motion.div variants={itemVariants} style={{ zIndex: 5, width: '100%', maxWidth: '600px', height: '600px', flexShrink: 0 }}>
             <div style={{ width: '100%', height: '100%', backgroundColor: '#0f172a', borderRadius: '1.5rem', padding: '1.5rem', border: '8px solid #1e293b', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}>
               <MockupUI isDesktop={true} />
             </div>
           </motion.div>
           
           {/* Tablet (Right) */}
-          <motion.div variants={itemVariants} style={{ zIndex: 8, width: '400px', height: '450px', flexShrink: 0 }}>
+          <motion.div variants={itemVariants} style={{ zIndex: 8, width: '100%', maxWidth: '400px', height: '450px', flexShrink: 0 }}>
             <div style={{ width: '100%', height: '100%', backgroundColor: '#0f172a', borderRadius: '1.5rem', padding: '1.25rem', border: '8px solid #1e293b', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}>
               <MockupUI />
             </div>

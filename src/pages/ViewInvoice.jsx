@@ -196,7 +196,7 @@ export default function ViewInvoice() {
           </div>
 
           <div className="table-responsive" style={{ marginBottom: '4rem' }}>
-            <table style={{ minWidth: '600px', width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+            <table style={{ minWidth: '100%', width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid #cbd5e1' }}>
                   <th style={{ padding: '1rem 0', color: '#334155', fontWeight: 700, fontSize: '0.875rem', textTransform: 'uppercase' }}>Description</th>

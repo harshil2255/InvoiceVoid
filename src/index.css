@@ -267,13 +267,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4.5rem;
+  min-height: 4.5rem;
+  flex-wrap: wrap;
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -368,6 +370,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 .mobile-menu-btn {
   display: none;

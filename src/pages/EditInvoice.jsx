@@ -262,7 +262,7 @@ export default function EditInvoice() {
             <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>Line Items</h3>
             
           <div className="table-responsive">
-            <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr 1fr 1fr 40px', minWidth: '600px', gap: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: 500, padding: '0 0.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '3fr 1fr 1fr 1fr 40px', minWidth: '100%', gap: '1rem', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem', fontWeight: 500, padding: '0 0.5rem' }}>
               <div>Description</div>
               <div>Qty</div>
               <div>Price (₹)</div>
