@@ -133,7 +133,7 @@ export default function ViewInvoice() {
       <div className="container" style={{ maxWidth: '800px' }}>
         
         {/* Header Actions */}
-        <div className="flex justify-between items-center mb-6 no-print">
+        <div className="flex flex-wrap items-center gap-4 mb-8 no-print">
           <button onClick={() => navigate('/dashboard')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <ArrowLeft size={20} /> Back to Dashboard
           </button>
@@ -166,7 +166,7 @@ export default function ViewInvoice() {
         {/* Invoice Paper Document */}
         <div id="invoice-document" className="card" style={{ padding: '4rem', backgroundColor: 'white', color: 'black', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>
           
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4rem' }}>
+          <div className="flex flex-wrap" style={{ justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4rem', gap: '2rem' }}>
             <div>
               <h1 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#0f172a', margin: 0, lineHeight: 1 }}>INVOICE</h1>
               <p style={{ color: '#475569', marginTop: '0.5rem' }}>#{invoice.id.split('-')[0].toUpperCase()}</p>

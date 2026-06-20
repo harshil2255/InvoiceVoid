@@ -60,7 +60,7 @@ export default function Dashboard() {
       <div className="container" style={{ maxWidth: '1000px' }}>
         
         {/* Dashboard Header */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 flex-wrap" style={{ gap: '1rem' }}>
           <div>
             <h1 className="font-serif heading-2" style={{ color: 'var(--text-primary)' }}>Dashboard</h1>
             <p style={{ color: 'var(--text-secondary)' }}>Welcome back, {user?.user_metadata?.full_name || user?.email || 'User'}!</p>
