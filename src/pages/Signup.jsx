@@ -29,6 +29,7 @@ export default function Signup() {
         password: formData.password,
         options: {
           data: { full_name: formData.name },
+          emailRedirectTo: 'https://invoice-void.vercel.app/dashboard'
         }
       });
       
